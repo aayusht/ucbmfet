@@ -1,10 +1,39 @@
-<h1>uc berkeley memes for edgy teeeeeeeens 2.0 EECS edition</h1>
-<p>apparently you can't have a readme and an index.html</p>
-<p>I will make this good soon</p>
-<p>pls make me a mod</p>
-<p>
-  So I have to learn the Facebook SDK to actually get posts on here, 
-  but it is an open group so I don't think I have to be a mod. Hopefully 
-  I can make this a good skin of the website because Facebook is bad.
-</p>
-<p>If you want to support this website pay me $12</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+    <title>G O B E A R S</title>
+  </head>
+  <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : 'your-app-id',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v2.10'
+        });
+        FB.AppEvents.logPageView();
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <h1>uc berkeley memes for edgy teeeeeeeens 2.0 EECS edition</h1>
+    <p>apparently you can't have a readme and an index.html</p>
+    <p>I will make this good soon</p>
+    <p>pls make me a mod</p>
+    <p>
+      So I have to learn the Facebook SDK to actually get posts on here,
+      but it is an open group so I don't think I have to be a mod. Hopefully
+      I can make this a good skin of the website because Facebook is bad.
+    </p>
+    <p>If you want to support this website pay me $12</p>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+  </body>
+</html>
