@@ -3,6 +3,27 @@
   <head>
     <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
     <title>G O B E A R S</title>
+    <script>
+      function showMeme() {
+        FB.api(
+          "/1717731545171536/feed",
+          function (response) {
+            if (response && !response.error) {
+              id = response.data[0].id;
+              document.getElementById("title").innerHTML = response.data[0].message;
+              FB.api(
+                id,
+                function (response2) {
+                  if (response2 && !response2.error) {
+                    document.getElementById("image").src = response2.data[0].media.image.src;
+                  }
+                }
+              );
+            }
+          }
+        );
+      }
+    </script>
   </head>
   <body>
     <script>
@@ -40,5 +61,11 @@
     <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
     </fb:login-button>
     <p>If you want to support this website pay me $12</p>
+    <div id='meme'>
+      <button type="button" onclick="showMeme()">Get Latest Meme</button>
+      <p id="title"></p>
+      <img id="image"></p>
+    </div>
+
   </body>
 </html>
