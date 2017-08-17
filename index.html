@@ -6,21 +6,30 @@
     <script>
       function showMeme() {
         FB.api(
-          "/1717731545171536/feed",
+          "/1717731545171536/feed?limit=100",
           function (response) {
             if (response && !response.error) {
-              id = response.data[0].id;
-              document.getElementById("title").innerHTML = response.data[0].message;
-              FB.api(
-                id + "/attachments",
-                function (response2) {
-                  if (response2 && !response2.error) {
-                    document.getElementById("image").src = response2.data[0].media.image.src;
+      			  response.data.map(function(meme) {
+                id = meme.id;
+                FB.api(
+                  id + "/attachments",
+                  function (response2) {
+                    if (response2 && !response2.error) {
+                      var parent = document.getElementById('meme')
+                      var p = document.createElement('p')
+                      var img = document.createElement('img')
+                      var node = document.createTextNode(meme.message)
+                      p.appendChild(node)
+                      img.src = response2.data[0].media.image.src
+                      parent.appendChild(p)
+                      parent.appendChild(img)
+                    }
                   }
-                }
-              );
+                );
+              });
             }
           }
+        );
         );
       }
     </script>
@@ -58,11 +67,11 @@
     <p>W A R N I N G: This is now an A D V A N C E D website. I have learned how to load 100 memes at a time.</p>
     <p>pls make me a mod</p>
     <p>Facebook SDK is connected! But currently in developer mode, so only I can access</p>
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    <fb:login-button scope="public_profile,email">
     </fb:login-button>
     <p>If you want to support this website pay me $12</p>
     <div id='meme'>
-      <button type="button" onclick="showMeme()">Get Latest Meme</button>
+      <button type="button" onclick="showMeme()">Load 100 memes</button>
       <p id="title"></p>
       <img id="image"></p>
     </div>
