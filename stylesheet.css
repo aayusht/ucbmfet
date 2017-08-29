@@ -1,3 +1,70 @@
-h1, p {
-  font-family: Verdana, Geneva, sans-serif;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #003262;
+}
+
+h1 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  margin: 0;
+}
+
+p {
+  color: white;
+}
+
+#wowowow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.wow {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: Tahoma, Geneva, sans-serif;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#first {
+  visibility: hidden;
+  font-size: 8rem;
+}
+
+#second {
+  visibility: hidden;
+  font-size: 8rem;
+}
+
+#third {
+  visibility: hidden;
+  font-size: 6rem;
+}
+
+#fourth {
+  visibility: hidden;
+  font-size: 6rem;
+}
+
+#login {
+  background-color: #3B7EA1;
+  color: white;
+  font-size: 1rem;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  padding: 1rem;
+  margin: 1rem;
+  visibility: hidden;
+}
+
+#header {
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
