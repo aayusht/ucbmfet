@@ -39,7 +39,7 @@ function showMeme() {
 
 function login() {
   FB.login(function(response) {
-    if (response == 'connected') {
+    if (response.status == 'connected') {
       document.getElementById('wowowow').parentElement.removeChild(child);
       showMeme();
     }
