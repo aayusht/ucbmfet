@@ -40,7 +40,8 @@ function showMeme() {
 function login() {
   FB.login(function(response) {
     if (response.status == 'connected') {
-      document.getElementById('wowowow').parentElement.removeChild(child);
+      var child = document.getElementById('wowowow');
+      child.parentElement.removeChild(child);
       showMeme();
     }
   })
