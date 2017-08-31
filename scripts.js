@@ -35,7 +35,7 @@ function showMeme() {
             id + "/reactions",
             function (response) {
               if (response && !response.error) {
-                console.log(response.summary)
+                console.log(response)
               }
             }
           );
