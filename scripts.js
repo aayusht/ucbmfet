@@ -18,16 +18,24 @@ function showMeme() {
           id = meme.id;
           FB.api(
             id + "/attachments",
-            function (response2) {
-              if (response2 && !response2.error) {
+            function (response) {
+              if (response && !response.error) {
                 var parent = document.getElementById('meme')
                 var p = document.createElement('p')
                 var img = document.createElement('img')
                 var node = document.createTextNode(meme.message)
                 p.appendChild(node)
-                img.src = response2.data[0].media.image.src
+                img.src = response.data[0].media.image.src
                 parent.appendChild(p)
                 parent.appendChild(img)
+              }
+            }
+          );
+          FB.api(
+            id + "/reactions",
+            function (response) {
+              if (response && !response.error) {
+                console.log(response.summary)
               }
             }
           );
