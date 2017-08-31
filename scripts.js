@@ -32,7 +32,7 @@ function showMeme() {
             }
           );
           FB.api(
-            id + "/reactions?summary=total_count",
+            id + "&fields=reactions.type(LOVE).limit(0).summary(total_count).as(reactions_love),reactions.type(WOW).limit(0).summary(total_count).as(reactions_wow),reactions.type(HAHA).limit(0).summary(total_count).as(reactions_haha)",
             function (response) {
               if (response && !response.error) {
                 console.log(response)
